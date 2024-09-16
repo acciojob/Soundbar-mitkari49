@@ -1,1 +1,12 @@
 /*  your css code here. If applicable */
+body{
+	background-color:purple;
+}
+button{
+	background-color:rgb(160, 32, 240);
+	padding:10px;
+	margin:9px;
+	border:0px;
+	border-radius:3px;
+	color:white;
+}
