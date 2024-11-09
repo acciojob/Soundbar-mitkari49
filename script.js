@@ -1,21 +1,15 @@
-const buttons = document.querySelectorAll(".btn");
-const stopButton = document.querySelector(".stop");
-let currentSound;
 
-buttons.forEach(button => {
-	button.addEventListener("click", playSound);
-});
+document.addEventListener("DOMContentLoaded",()=>{
+// selected all btn's
+	const AllButtons = document.querySelectorAll(".btn");
+// Added click event to each buttons
+	AllButtons.forEach(button=>{
+		button.addEventListener("click",()=>{
+			// getting sound file from data attibute
 
-stopButton.addEventListener("click", stopSound);
-
-function playSound(event) {
-	const soundName = event.target.getAttribute("data-sound");
-	currentSound = new Audio(`sounds/${soundName}.mp3`);
-	currentSound.play();
-}
-
-function stopSound() {
-	if (currentSound) {
-		currentSound.pause();
-	}
-}
+			const soundName=button.getAttribute("data-sound");
+			const audio =new Audio(`sounds/${soundName}.mp3`);
+			audio.play();
+		})
+	})
+})
